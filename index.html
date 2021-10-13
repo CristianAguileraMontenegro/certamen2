@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Certmanen2</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/estilos.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                 <h1>Clientes</h1>
+            </div>
+        </header>
+
+        <div class="container-fluid" id="containerFormulario">
+            <div class="row">
+                <div class="col-12">
+                    <form id="formularioCliente">
+                        <div class="form">
+                            <div class="col-md-12  col-mt-4" id="nombrescol">
+                                <label for="Nombres" class="form-label">Nombre Completo</label>
+                                <input type="text"  id="Nombres" required>
+                            </div> 
+
+                            <div class="ccol-md-12  col-mt-4" id="edadcol">
+                                <label for="edad" class="form-label">Edad</label>
+                                <input type="text" id="edad" required>
+                            </div> 
+
+                            <div class="col-md-12  col-mt-4" id="radiocol">
+                                <label class="form-label">Genero</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input-genero" type="radio" name="generoEleccion" id="Hombre1" value="Hombre" >
+                                    <label class="form-check-label" for="Hombre1" id="labelHombre">
+                                        Hombre
+                                    </label>
+                                </div>            
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input-genero" type="radio" name="generoEleccion" id="Mujer1" value="Mujer">
+                                    <label class="form-check-label" for="Mujer1" id="labelMujer">
+                                        Mujer
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12  col-mt-4" id="nacimientocol">
+                                <label for="Nacimineto" class="form-label">Fecha de nacimineto</label>
+                                <input type="date"  id="Nacimineto" required>
+                            </div> 
+
+                            <div class="col-md-12  col-mt-4" id="regionesCol">
+                                <label for="regiones" class="form-label" id="labelRegion">Regiones</label>
+                                <select  aria-label="Default select example" id="regiones" required>
+                                    <option value="">Regiones</option>
+                                    <option value="1">Valparaiso</option>
+                                    <option value="2">Atacama</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-12  col-mt-4" id="comunasCol">
+                                <label for="comunas" class="form-label" id="labelComunas">Comunas</label>
+                                <select  aria-label="Default select example" id="comunas" required>
+                                    <option value="">Comunas</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-12  col-mt-4" id="direccioncol">
+                                <label for="direccion" class="form-label">Direccion</label>
+                                <input type="text"  id="direccion" required>
+                            </div> 
+
+                            <div class="col-md-12  col-mt-4" id="telefonocol">
+                                <label for="telefono" class="form-label">Telefono</label>
+                                <input type="number" id="telefono" required>
+                            </div> 
+
+                            <div class="col-md-12  col-mt-4" id="observacionescol">
+                                <label class="form-label" id="labelObservacion">Observaciones</label>
+                                <textarea name="observaciones" id="observaciones" cols="45" rows="2"></textarea>
+                            </div>
+
+                            <div class="col-md-12  col-mt-4" id="habilidadescol">
+                                <label class="form-label" id="labelHabilidades">Habilidades</label>
+                                <span class="material-icons md-16" id="adicionarHabilidad" onclick="mostrarFormulario()">add_circle_outline</span>  
+                                <ul id="listaDeHablidades">
+                                    
+                                </ul>
+                                
+                            </div>
+    
+                            <div class="col-md-12 col-sm-4">
+                                <button  type="button" onclick="validacion()" id="ingreso">Crear</button>
+                                <button   onclick="limpiar()" id="limpiar1">Limpiar</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div> 
+        </div>
+
+        <div class="container-fluid" id="containerFormularioHabilidad">
+
+        </div>
+
+        <div id="contenedorDeListaClientes">
+            <div class="container-fluid" id="containerListaClientes">
+                <div class="row-mt-5" id="rowSuperior1">
+                    <div class="col-mt-12 col-sm-6">
+                        <h1>Lista de clientes</h1>
+                    </div>
+                </div>
+                <div class="row" id="rowSuperior2">
+                    <div class="col-md-2 col-mt-1">
+                        <div class="row lista" id="rowIcono">
+                            <div class="col-12">
+                                <h3> </h3>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="col-md-1 col-mt-1">
+                        <div class="row lista" id="rowID">
+                            <div class="col-12">
+                                <h3>ID</h3>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="col-md-2 col-mt-1">
+                        <div class="row lista" id="rowNombre">
+                            <div class="col-12">
+                                <h3>Nombres</h3>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="col-md-2 col-mt-1">
+                        <div class="row lista" id="rowRegion">
+                            <div class="col-12">
+                                <h3>Region</h3>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="col-md-2 col-mt-1">
+                        <div class="row lista" id="rowComuna">
+                            <div class="col-12">
+                                <h3>Comuna</h3>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="col-md-2 col-mt-1">
+                        <div class="row lista" id="rowHabilidades">
+                            <div class="col-12">
+                                <h3>Habilidaddes</h3>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="col-md-1 col-mt-1">
+                        <div class="row lista" id="rowEliminar">
+                            <div class="col-12">
+                                <h3 class="invicibleTexto">Nada</h3>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+              
+        
+    
+        <script src="js/crearCliente.js" async defer></script>
+        <script src="js/habilidades.js" async defer></script>
+        <script src="js/llenarComunas.js" async defer></script>
+    </body>
+</html>

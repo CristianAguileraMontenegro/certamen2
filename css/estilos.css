@@ -1,0 +1,144 @@
+/*posiscionamos inputs*/
+label {
+  display: inline-block;
+  width: 170px;
+  border-width: 3px;
+}
+
+#Nombres {
+  width: 20%;
+}
+
+#edad {
+  width: 8%;
+}
+
+.form-check-input-genero {
+  position: relative;
+  margin-left: -22px;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+#Nacimineto {
+  width: 16%;
+}
+
+#regiones {
+  width: 16%;
+}
+
+#comunas {
+  width: 16%;
+}
+
+#direccion {
+  width: 18%;
+}
+
+#telefono {
+  width: 18%;
+}
+
+#labelObservacion {
+  float: left;
+}
+
+#labelHombre {
+  position: relative;
+  left: 10%;
+}
+
+#labelMujer {
+  position: relative;
+  left: 10%;
+}
+
+/*posiscionamos inputs*/
+/*botones*/
+#adicionarHabilidad {
+  position: relative;
+  font-size: 35px;
+  background-color: transparent;
+  border-width: 0px;
+  top: 14px;
+}
+
+.col-md-12.col-sm-4 #ingreso {
+  background-color: transparent;
+  height: 60px;
+  width: 140px;
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 2%;
+}
+
+#limpiar1 {
+  background-color: transparent;
+  height: 60px;
+  width: 140px;
+  margin-top: 2%;
+}
+
+/*botones*/
+/*formulario habilidades*/
+#formHabilidades {
+  height: 20%;
+}
+
+/*formulario habilidades*/
+/*listaHabilidades*/
+#listaDeHablidades {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#listaDeHablidades li {
+  float: left;
+  position: relative;
+  border-style: solid;
+  height: 30px;
+  width: 8%;
+  border-color: black;
+  border-width: 3px;
+  margin-right: 1%;
+  text-align: center;
+}
+
+/**/
+/*listaClientes*/
+#contenedorDeListaClientes {
+  margin-top: 6%;
+}
+
+.invicibleTexto {
+  visibility: hidden;
+}
+
+.imgIconoFoto {
+  height: 60%;
+  width: 30%;
+}
+
+#rowID .col-12.datos {
+  border-color: black;
+  border-width: 3px;
+  margin-right: 1%;
+}
+
+#habilidadesEnLista {
+  border-color: black;
+  border-width: 3px;
+  margin-right: 1%;
+}
+
+/*mensaje de error*/
+.mensajeDeError {
+  color: red;
+}
+
+/*mensaje de error*/
+/*# sourceMappingURL=estilos.css.map */
